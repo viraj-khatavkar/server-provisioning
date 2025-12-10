@@ -1,20 +1,18 @@
 # server-provisioning
 
-Add a new non-root user:
+```
+# Add a new non-root user:
+sudo adduser viraj
 
-`sudo adduser viraj`
+# Add to the sudo user group:
+sudo usermod -a -G sudo viraj
 
-Add to the sudo user group:
+# copy authorized ssh public keys from root user:
+cp ~/.ssh/authorized_keys /home/viraj/.ssh/authorized_keys
 
-`sudo usermod -a -G sudo viraj`
-
-copy authorized ssh public keys from root user:
-
-`cp ~/.ssh/authorized_keys /home/viraj/.ssh/authorized_keys`
-
-Set the proper ownership:
-
-`chown -R viraj:viraj /home/viraj/.ssh/authorized_keys`
+#Set the proper ownership:
+chown -R viraj:viraj /home/viraj/.ssh/authorized_keys
+```
 
 Firewall:
 
